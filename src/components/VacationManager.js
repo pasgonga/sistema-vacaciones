@@ -433,7 +433,7 @@ const VacationManager = () => {
             usedVacationDays: { 2024: Math.floor(Math.random() * 10), 2025: Math.floor(Math.random() * 5), 2026: 0 },
             startDate: new Date(2023, index % 12, 1).toISOString().split('T')[0],
             endDate: null,
-            department: ['IT', 'RRHH', 'Marketing', 'Ventas', 'Administración'][index % 5]
+            department: ['Soporte', 'Programacción', 'Booking', 'Administración'][index % 5]
           }));
 
           await saveToDB('employees', initialEmployees);
@@ -1134,10 +1134,9 @@ const VacationManager = () => {
                     style={styles.select}
                   >
                     <option value="">Seleccionar departamento</option>
-                    <option value="IT">IT</option>
-                    <option value="RRHH">RRHH</option>
-                    <option value="Marketing">Marketing</option>
-                    <option value="Ventas">Ventas</option>
+                    <option value="Soporte">Soporte</option>
+                    <option value="Programación">Programación</option>
+                    <option value="Booking">Booking</option>
                     <option value="Administración">Administración</option>
                   </select>
                 </div>
