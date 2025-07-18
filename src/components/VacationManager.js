@@ -420,47 +420,47 @@ const VacationManager = () => {
         ]);
 
         if (employeesData.length <= 5) {  // Fuerza recarga si hay 5 o menos
-          const initialEmployees = [
-"PEPE SALGADO",
-"AURELIO CARDONA",
-"ÓSCAR GÓMEZ",
-"YOLANDA CALZÓN",
-"MARÍA BARROS NIETO",
-"PEDRO CALVET",
-"INMACULADA SÁNCHEZ",
-"ANGELA ESCOBEDO FERNÁNDEZ",
-"ALEJANDRO RODRÍGUEZ",
-"DIEGO JULIÁN",
-"NÉSTOR PRADAS",
-"JOSÉ ANTONIO TORRES",
-"ENRIQUE GRAU",
-"TONI SECU",
-"RAÚL HERNÁNDEZ",
-"ELENA TIRADO",
-"JOSE CARLOS MESEGUER",
-"TONI RODADO",
-"ALFREDO MARTÍ",
-"MAXIMO DOPPIONI",
-"JOSÉ MARÍA RODRÍGUEZ",
-"BLAS NAVARRO MIR",
-"HECTOR NAVARRO",
-"ALEXANDRU DIACONU",
-"RUBÉN LADRÓN",
-"ANDRES ALVARADO",
-"JUAN ESTEBAN GÓMEZ",
-"ARCIEL NAVARRO HERNANDEZ",
-"MANUEL AICART",
-"RAUL TELLOLS",
-"JOSÉ RAMÓN CABEDO"
-          ].map((name, index) => ({
-            id: Date.now() + index,
-            name,
-            totalVacationDays: 22,
-            usedVacationDays: { 2024: Math.floor(Math.random() * 10), 2025: Math.floor(Math.random() * 5), 2026: 0 },
-            startDate: new Date(2023, index % 12, 1).toISOString().split('T')[0],
-            endDate: null,
-            department: ['Soporte', 'Programacción', 'Booking', 'Administración'][index % 5]
-          }));
+         const initialEmployees = [
+  "PEPE SALGADO",
+  "AURELIO CARDONA", 
+  "ÓSCAR GÓMEZ",
+  "YOLANDA CALZÓN",
+  "MARÍA BARROS NIETO",
+  "PEDRO CALVET",
+  "INMACULADA SÁNCHEZ",
+  "ANGELA ESCOBEDO FERNÁNDEZ",
+  "ALEJANDRO RODRÍGUEZ",
+  "DIEGO JULIÁN",
+  "NÉSTOR PRADAS",
+  "JOSÉ ANTONIO TORRES",
+  "ENRIQUE GRAU",
+  "TONI SECU",
+  "RAÚL HERNÁNDEZ",
+  "ELENA TIRADO",
+  "JOSE CARLOS MESEGUER",
+  "TONI RODADO",
+  "ALFREDO MARTÍ",
+  "MAXIMO DOPPIONI",
+  "JOSÉ MARÍA RODRÍGUEZ",
+  "BLAS NAVARRO MIR",
+  "HECTOR NAVARRO",
+  "ALEXANDRU DIACONU",
+  "RUBÉN LADRÓN",
+  "ANDRES ALVARADO",
+  "JUAN ESTEBAN GÓMEZ",
+  "ARCIEL NAVARRO HERNANDEZ",
+  "MANUEL AICART",
+  "RAUL TELLOLS",
+  "JOSÉ RAMÓN CABEDO"
+].map((name, index) => ({
+  id: Date.now() + index,
+  name,
+  totalVacationDays: 22,
+  usedVacationDays: { 2024: Math.floor(Math.random() * 10), 2025: Math.floor(Math.random() * 5), 2026: 0 },
+  startDate: new Date(2023, index % 12, 1).toISOString().split('T')[0],
+  endDate: null,
+  department: ['Soporte', 'Programación', 'Booking', 'Administración'][index % 4]
+}));
 
           await saveToDB('employees', initialEmployees);
           setEmployees(initialEmployees);
