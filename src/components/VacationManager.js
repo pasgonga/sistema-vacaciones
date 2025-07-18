@@ -39,6 +39,305 @@ const VacationManager = () => {
     reason: ''
   });
 
+  // Estilos CSS inline
+  const styles = {
+    container: {
+      minHeight: '100vh',
+      backgroundColor: '#f9fafb',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+    },
+    header: {
+      backgroundColor: 'white',
+      borderBottom: '1px solid #e5e7eb',
+      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)'
+    },
+    headerContent: {
+      maxWidth: '1280px',
+      margin: '0 auto',
+      padding: '0 24px',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingTop: '24px',
+      paddingBottom: '24px'
+    },
+    headerTitle: {
+      fontSize: '30px',
+      fontWeight: 'bold',
+      color: '#111827',
+      margin: 0,
+      marginBottom: '8px'
+    },
+    headerSubtitle: {
+      color: '#6b7280',
+      margin: 0
+    },
+    headerActions: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '16px'
+    },
+    button: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '8px',
+      padding: '8px 12px',
+      borderRadius: '6px',
+      border: 'none',
+      cursor: 'pointer',
+      fontSize: '14px',
+      fontWeight: '500',
+      transition: 'all 0.2s'
+    },
+    buttonPrimary: {
+      backgroundColor: '#3b82f6',
+      color: 'white'
+    },
+    buttonSecondary: {
+      backgroundColor: '#f3f4f6',
+      color: '#374151'
+    },
+    buttonSuccess: {
+      backgroundColor: '#10b981',
+      color: 'white'
+    },
+    buttonDanger: {
+      backgroundColor: '#ef4444',
+      color: 'white'
+    },
+    nav: {
+      backgroundColor: 'white',
+      borderBottom: '1px solid #e5e7eb'
+    },
+    navContent: {
+      maxWidth: '1280px',
+      margin: '0 auto',
+      padding: '0 24px',
+      display: 'flex',
+      gap: '32px'
+    },
+    navTab: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '8px',
+      padding: '16px 12px',
+      border: 'none',
+      backgroundColor: 'transparent',
+      cursor: 'pointer',
+      fontSize: '14px',
+      fontWeight: '500',
+      color: '#6b7280',
+      borderBottom: '2px solid transparent',
+      transition: 'all 0.2s'
+    },
+    navTabActive: {
+      color: '#3b82f6',
+      borderBottomColor: '#3b82f6'
+    },
+    main: {
+      maxWidth: '1280px',
+      margin: '0 auto',
+      padding: '32px 24px'
+    },
+    alert: {
+      padding: '16px',
+      borderRadius: '8px',
+      marginBottom: '24px',
+      fontWeight: '500',
+      fontSize: '14px'
+    },
+    alertSuccess: {
+      backgroundColor: '#d1fae5',
+      color: '#065f46',
+      border: '1px solid #6ee7b7'
+    },
+    alertError: {
+      backgroundColor: '#fee2e2',
+      color: '#991b1b',
+      border: '1px solid #fecaca'
+    },
+    alertWarning: {
+      backgroundColor: '#fef3c7',
+      color: '#92400e',
+      border: '1px solid #fde68a'
+    },
+    card: {
+      backgroundColor: 'white',
+      borderRadius: '12px',
+      padding: '24px',
+      marginBottom: '24px',
+      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+      border: '1px solid #e5e7eb'
+    },
+    cardTitle: {
+      fontSize: '18px',
+      fontWeight: '600',
+      color: '#111827',
+      marginBottom: '16px'
+    },
+    grid: {
+      display: 'grid',
+      gap: '24px'
+    },
+    gridCols2: {
+      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))'
+    },
+    gridCols3: {
+      gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))'
+    },
+    gridCols5: {
+      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))'
+    },
+    formGroup: {
+      marginBottom: '20px'
+    },
+    label: {
+      display: 'block',
+      marginBottom: '8px',
+      fontSize: '14px',
+      fontWeight: '500',
+      color: '#374151'
+    },
+    input: {
+      width: '100%',
+      padding: '12px',
+      border: '1px solid #d1d5db',
+      borderRadius: '6px',
+      fontSize: '14px',
+      backgroundColor: '#ffffff',
+      transition: 'border-color 0.2s, box-shadow 0.2s',
+      boxSizing: 'border-box'
+    },
+    inputFocus: {
+      outline: 'none',
+      borderColor: '#3b82f6',
+      boxShadow: '0 0 0 3px rgba(59, 130, 246, 0.1)'
+    },
+    select: {
+      width: '100%',
+      padding: '12px',
+      border: '1px solid #d1d5db',
+      borderRadius: '6px',
+      fontSize: '14px',
+      backgroundColor: '#ffffff',
+      cursor: 'pointer',
+      boxSizing: 'border-box'
+    },
+    statCard: {
+      backgroundColor: 'white',
+      borderRadius: '12px',
+      padding: '24px',
+      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+      border: '1px solid #e5e7eb'
+    },
+    statIcon: {
+      padding: '12px',
+      borderRadius: '8px',
+      color: 'white',
+      marginBottom: '12px',
+      display: 'inline-block'
+    },
+    statNumber: {
+      fontSize: '32px',
+      fontWeight: 'bold',
+      color: '#111827',
+      margin: '8px 0'
+    },
+    statLabel: {
+      fontSize: '14px',
+      color: '#6b7280',
+      fontWeight: '500'
+    },
+    employeeCard: {
+      border: '1px solid #e5e7eb',
+      borderRadius: '12px',
+      padding: '20px',
+      backgroundColor: 'white',
+      transition: 'box-shadow 0.2s'
+    },
+    employeeCardHover: {
+      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+    },
+    badge: {
+      padding: '4px 8px',
+      borderRadius: '9999px',
+      fontSize: '12px',
+      fontWeight: '500'
+    },
+    badgeGreen: {
+      backgroundColor: '#d1fae5',
+      color: '#065f46'
+    },
+    badgeRed: {
+      backgroundColor: '#fee2e2',
+      color: '#991b1b'
+    },
+    progressBar: {
+      width: '100%',
+      height: '8px',
+      backgroundColor: '#e5e7eb',
+      borderRadius: '4px',
+      overflow: 'hidden',
+      marginTop: '12px'
+    },
+    progressFill: {
+      height: '100%',
+      backgroundColor: '#3b82f6',
+      transition: 'width 0.3s ease'
+    },
+    vacationItem: {
+      border: '1px solid #e5e7eb',
+      borderRadius: '8px',
+      padding: '16px',
+      marginBottom: '12px',
+      backgroundColor: 'white',
+      borderLeft: '4px solid #fbbf24'
+    },
+    restrictionItem: {
+      border: '1px solid #fbbf24',
+      borderRadius: '8px',
+      padding: '16px',
+      marginBottom: '12px',
+      backgroundColor: '#fffbeb'
+    },
+    loadingContainer: {
+      minHeight: '100vh',
+      backgroundColor: '#f9fafb',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    spinner: {
+      width: '48px',
+      height: '48px',
+      border: '4px solid #e5e7eb',
+      borderTop: '4px solid #3b82f6',
+      borderRadius: '50%',
+      animation: 'spin 1s linear infinite',
+      marginBottom: '16px'
+    }
+  };
+
+  // CSS para animaciones
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .hover-shadow:hover {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .button-hover:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+    `;
+    document.head.appendChild(style);
+    return () => document.head.removeChild(style);
+  }, []);
+
   // Base de datos IndexedDB
   const initDB = () => {
     return new Promise((resolve, reject) => {
@@ -626,146 +925,140 @@ const VacationManager = () => {
   };
 
   const dashboardData = getDashboardData();
-  const COLORS = ['#385CDB', '#FCCB49', '#E63946', '#F4A261', '#2A9D8F', '#E76F51'];
+  const COLORS = ['#3b82f6', '#fbbf24', '#ef4444', '#f59e0b', '#10b981', '#8b5cf6'];
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Cargando sistema de vacaciones...</p>
+      <div style={styles.loadingContainer}>
+        <div style={{ textAlign: 'center' }}>
+          <div style={styles.spinner}></div>
+          <p style={{ color: '#6b7280' }}>Cargando sistema de vacaciones...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">🏖️ Gestión de Vacaciones</h1>
-              <p className="text-gray-600">Sistema completo para administrar las vacaciones de tu equipo</p>
-            </div>
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => {
-                  if (notificationPermission === 'granted') {
-                    setNotificationsEnabled(!notificationsEnabled);
-                    showAlert('general', notificationsEnabled ? 'Notificaciones desactivadas' : 'Notificaciones activadas', 'success');
-                  } else {
-                    requestNotificationPermission();
-                  }
-                }}
-                className={`flex items-center px-3 py-2 rounded-md text-sm ${
-                  notificationsEnabled 
-                    ? 'bg-green-100 text-green-800 hover:bg-green-200' 
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-                title={notificationsEnabled ? 'Desactivar notificaciones' : 'Activar notificaciones'}
-              >
-                {notificationsEnabled ? <Bell size={16} /> : <BellOff size={16} />}
-                <span className="ml-2">{notificationsEnabled ? 'Notificaciones ON' : 'Notificaciones OFF'}</span>
-              </button>
-              
-              <button
-                onClick={exportToCSV}
-                className="flex items-center px-3 py-2 bg-blue-100 text-blue-800 rounded-md hover:bg-blue-200 text-sm"
-                title="Exportar a CSV"
-              >
-                <FileSpreadsheet size={16} />
-                <span className="ml-2">Exportar CSV</span>
-              </button>
-              
-              <div className="text-sm text-gray-500">
-                <Calendar className="inline mr-2" size={16} />
-                {new Date().toLocaleDateString('es-ES', { 
-                  weekday: 'long', 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
-                })}
-              </div>
+    <div style={styles.container}>
+      <header style={styles.header}>
+        <div style={styles.headerContent}>
+          <div>
+            <h1 style={styles.headerTitle}>🏖️ Gestión de Vacaciones</h1>
+            <p style={styles.headerSubtitle}>Sistema completo para administrar las vacaciones de tu equipo</p>
+          </div>
+          <div style={styles.headerActions}>
+            <button
+              onClick={() => {
+                if (notificationPermission === 'granted') {
+                  setNotificationsEnabled(!notificationsEnabled);
+                  showAlert('general', notificationsEnabled ? 'Notificaciones desactivadas' : 'Notificaciones activadas', 'success');
+                } else {
+                  requestNotificationPermission();
+                }
+              }}
+              style={{
+                ...styles.button,
+                ...(notificationsEnabled ? { backgroundColor: '#10b981', color: 'white' } : styles.buttonSecondary)
+              }}
+              className="button-hover"
+              title={notificationsEnabled ? 'Desactivar notificaciones' : 'Activar notificaciones'}
+            >
+              {notificationsEnabled ? <Bell size={16} /> : <BellOff size={16} />}
+              <span>{notificationsEnabled ? 'Notificaciones ON' : 'Notificaciones OFF'}</span>
+            </button>
+            
+            <button
+              onClick={exportToCSV}
+              style={{...styles.button, ...styles.buttonPrimary}}
+              className="button-hover"
+              title="Exportar a CSV"
+            >
+              <FileSpreadsheet size={16} />
+              <span>Exportar CSV</span>
+            </button>
+            
+            <div style={{ fontSize: '14px', color: '#6b7280', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Calendar size={16} />
+              {new Date().toLocaleDateString('es-ES', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+              })}
             </div>
           </div>
         </div>
       </header>
 
-      <nav className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex space-x-8">
-            {[
-              { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
-              { id: 'employees', label: 'Empleados', icon: Users },
-              { id: 'vacations', label: 'Vacaciones', icon: Calendar },
-              { id: 'restrictions', label: 'Restricciones', icon: AlertTriangle }
-            ].map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center px-3 py-4 text-sm font-medium border-b-2 transition-colors ${
-                  activeTab === tab.id
-                    ? 'border-blue-500 text-blue-600'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                }`}
-              >
-                <tab.icon className="mr-2" size={18} />
-                {tab.label}
-              </button>
-            ))}
-          </div>
+      <nav style={styles.nav}>
+        <div style={styles.navContent}>
+          {[
+            { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
+            { id: 'employees', label: 'Empleados', icon: Users },
+            { id: 'vacations', label: 'Vacaciones', icon: Calendar },
+            { id: 'restrictions', label: 'Restricciones', icon: AlertTriangle }
+          ].map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              style={{
+                ...styles.navTab,
+                ...(activeTab === tab.id ? styles.navTabActive : {})
+              }}
+            >
+              <tab.icon size={18} />
+              {tab.label}
+            </button>
+          ))}
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main style={styles.main}>
         {alerts.general && (
-          <div className={`mb-6 p-4 rounded-lg ${
-            alerts.general.type === 'error' ? 'bg-red-50 text-red-800 border border-red-200' :
-            alerts.general.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' :
-            'bg-yellow-50 text-yellow-800 border border-yellow-200'
-          }`}>
+          <div style={{
+            ...styles.alert,
+            ...(alerts.general.type === 'error' ? styles.alertError :
+                alerts.general.type === 'success' ? styles.alertSuccess :
+                styles.alertWarning)
+          }}>
             {alerts.general.message}
           </div>
         )}
 
         {alerts[activeTab] && (
-          <div className={`mb-6 p-4 rounded-lg ${
-            alerts[activeTab].type === 'error' ? 'bg-red-50 text-red-800 border border-red-200' :
-            alerts[activeTab].type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' :
-            'bg-yellow-50 text-yellow-800 border border-yellow-200'
-          }`}>
+          <div style={{
+            ...styles.alert,
+            ...(alerts[activeTab].type === 'error' ? styles.alertError :
+                alerts[activeTab].type === 'success' ? styles.alertSuccess :
+                styles.alertWarning)
+          }}>
             {alerts[activeTab].message}
           </div>
         )}
 
         {activeTab === 'dashboard' && (
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div style={styles.grid}>
+            <div style={{...styles.grid, ...styles.gridCols5}}>
               {[
-                { label: 'Total Empleados', value: dashboardData.totalStats.totalEmployees, icon: Users, color: 'bg-blue-500' },
-                { label: 'Empleados Activos', value: dashboardData.totalStats.activeEmployees, icon: CheckCircle, color: 'bg-green-500' },
-                { label: 'Días Totales 2025', value: dashboardData.totalStats.totalVacationDays, icon: Calendar, color: 'bg-purple-500' },
-                { label: 'Días Usados 2025', value: dashboardData.totalStats.usedVacationDays, icon: TrendingUp, color: 'bg-yellow-500' },
-                { label: 'Vacaciones Pendientes', value: dashboardData.totalStats.pendingVacations, icon: Clock, color: 'bg-red-500' }
+                { label: 'Total Empleados', value: dashboardData.totalStats.totalEmployees, icon: Users, color: '#3b82f6' },
+                { label: 'Empleados Activos', value: dashboardData.totalStats.activeEmployees, icon: CheckCircle, color: '#10b981' },
+                { label: 'Días Totales 2025', value: dashboardData.totalStats.totalVacationDays, icon: Calendar, color: '#8b5cf6' },
+                { label: 'Días Usados 2025', value: dashboardData.totalStats.usedVacationDays, icon: TrendingUp, color: '#fbbf24' },
+                { label: 'Vacaciones Pendientes', value: dashboardData.totalStats.pendingVacations, icon: Clock, color: '#ef4444' }
               ].map((stat, index) => (
-                <div key={index} className="bg-white rounded-lg shadow p-6">
-                  <div className="flex items-center">
-                    <div className={`${stat.color} p-3 rounded-lg`}>
-                      <stat.icon className="text-white" size={24} />
-                    </div>
-                    <div className="ml-4">
-                      <p className="text-sm font-medium text-gray-600">{stat.label}</p>
-                      <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                    </div>
+                <div key={index} style={styles.statCard} className="hover-shadow">
+                  <div style={{...styles.statIcon, backgroundColor: stat.color}}>
+                    <stat.icon size={24} />
                   </div>
+                  <div style={styles.statNumber}>{stat.value}</div>
+                  <div style={styles.statLabel}>{stat.label}</div>
                 </div>
               ))}
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="bg-white rounded-lg shadow p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Empleados por Departamento</h3>
+            <div style={{...styles.grid, ...styles.gridCols2}}>
+              <div style={styles.card}>
+                <h3 style={styles.cardTitle}>Empleados por Departamento</h3>
                 <ResponsiveContainer width="100%" height={300}>
                   <PieChart>
                     <Pie
@@ -786,30 +1079,30 @@ const VacationManager = () => {
                 </ResponsiveContainer>
               </div>
 
-              <div className="bg-white rounded-lg shadow p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Uso de Vacaciones por Mes (2025)</h3>
+              <div style={styles.card}>
+                <h3 style={styles.cardTitle}>Uso de Vacaciones por Mes (2025)</h3>
                 <ResponsiveContainer width="100%" height={300}>
                   <BarChart data={dashboardData.monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="month" />
                     <YAxis />
                     <Tooltip />
-                    <Bar dataKey="days" fill="#385CDB" />
+                    <Bar dataKey="days" fill="#3b82f6" />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Uso de Vacaciones por Departamento</h3>
+            <div style={styles.card}>
+              <h3 style={styles.cardTitle}>Uso de Vacaciones por Departamento</h3>
               <ResponsiveContainer width="100%" height={400}>
                 <BarChart data={dashboardData.departmentData}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="name" />
                   <YAxis />
                   <Tooltip />
-                  <Bar dataKey="totalDays" fill="#FCCB49" name="Días Totales" />
-                  <Bar dataKey="usedDays" fill="#385CDB" name="Días Usados" />
+                  <Bar dataKey="totalDays" fill="#fbbf24" name="Días Totales" />
+                  <Bar dataKey="usedDays" fill="#3b82f6" name="Días Usados" />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -817,28 +1110,28 @@ const VacationManager = () => {
         )}
 
         {activeTab === 'employees' && (
-          <div className="space-y-6">
-            <div className="bg-white rounded-lg shadow p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+          <div style={styles.grid}>
+            <div style={styles.card}>
+              <h3 style={styles.cardTitle}>
                 {employeeForm.id ? 'Editar Empleado' : 'Agregar Empleado'}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
+              <div style={{...styles.grid, ...styles.gridCols2}}>
+                <div style={styles.formGroup}>
+                  <label style={styles.label}>Nombre</label>
                   <input
                     type="text"
                     value={employeeForm.name}
                     onChange={(e) => setEmployeeForm(prev => ({ ...prev, name: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={styles.input}
                     placeholder="Nombre completo"
                   />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Departamento</label>
+                <div style={styles.formGroup}>
+                  <label style={styles.label}>Departamento</label>
                   <select
                     value={employeeForm.department}
                     onChange={(e) => setEmployeeForm(prev => ({ ...prev, department: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={styles.select}
                   >
                     <option value="">Seleccionar departamento</option>
                     <option value="IT">IT</option>
@@ -848,46 +1141,48 @@ const VacationManager = () => {
                     <option value="Administración">Administración</option>
                   </select>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Días de vacaciones anuales</label>
+                <div style={styles.formGroup}>
+                  <label style={styles.label}>Días de vacaciones anuales</label>
                   <input
                     type="number"
                     value={employeeForm.totalVacationDays}
                     onChange={(e) => setEmployeeForm(prev => ({ ...prev, totalVacationDays: parseInt(e.target.value) }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={styles.input}
                     min="1"
                     max="365"
                   />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Fecha de alta</label>
+                <div style={styles.formGroup}>
+                  <label style={styles.label}>Fecha de alta</label>
                   <input
                     type="date"
                     value={employeeForm.startDate}
                     onChange={(e) => setEmployeeForm(prev => ({ ...prev, startDate: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={styles.input}
                   />
                 </div>
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Fecha de baja (opcional)</label>
+                <div style={{...styles.formGroup, gridColumn: '1 / -1'}}>
+                  <label style={styles.label}>Fecha de baja (opcional)</label>
                   <input
                     type="date"
                     value={employeeForm.endDate}
                     onChange={(e) => setEmployeeForm(prev => ({ ...prev, endDate: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={styles.input}
                   />
                 </div>
-                <div className="md:col-span-2 flex space-x-4">
+                <div style={{gridColumn: '1 / -1', display: 'flex', gap: '16px'}}>
                   <button
                     onClick={handleEmployeeSubmit}
-                    className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={{...styles.button, ...styles.buttonPrimary}}
+                    className="button-hover"
                   >
                     {employeeForm.id ? 'Actualizar' : 'Agregar'} Empleado
                   </button>
                   {employeeForm.id && (
                     <button
                       onClick={() => setEmployeeForm({ id: null, name: '', totalVacationDays: 22, startDate: '', endDate: '', department: '' })}
-                      className="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700"
+                      style={{...styles.button, ...styles.buttonSecondary}}
+                      className="button-hover"
                     >
                       Cancelar
                     </button>
@@ -896,9 +1191,9 @@ const VacationManager = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Lista de Empleados</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div style={styles.card}>
+              <h3 style={styles.cardTitle}>Lista de Empleados</h3>
+              <div style={{...styles.grid, ...styles.gridCols3}}>
                 {employees.map(employee => {
                   const usedDays2025 = employee.usedVacationDays[2025] || 0;
                   const remainingDays = employee.totalVacationDays - usedDays2025;
@@ -906,45 +1201,63 @@ const VacationManager = () => {
                   const isActive = isEmployeeActive(employee);
 
                   return (
-                    <div key={employee.id} className="border border-gray-200 rounded-lg p-4">
-                      <div className="flex justify-between items-start mb-3">
-                        <h4 className="font-medium text-gray-900">{employee.name}</h4>
-                        <span className={`px-2 py-1 text-xs rounded-full ${
-                          isActive ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-                        }`}>
+                    <div key={employee.id} style={styles.employeeCard} className="hover-shadow">
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
+                        <h4 style={{ fontWeight: '500', color: '#111827', margin: 0 }}>{employee.name}</h4>
+                        <span style={{
+                          ...styles.badge,
+                          ...(isActive ? styles.badgeGreen : styles.badgeRed)
+                        }}>
                           {isActive ? 'Activo' : 'Inactivo'}
                         </span>
                       </div>
                       
-                      <div className="space-y-2 text-sm text-gray-600">
-                        <p><span className="font-medium">Departamento:</span> {employee.department || 'No asignado'}</p>
-                        <p><span className="font-medium">Antigüedad:</span> {calculateSeniority(employee.startDate, employee.endDate)}</p>
-                        <p><span className="font-medium">Días restantes 2025:</span> {remainingDays}</p>
+                      <div style={{ marginBottom: '16px', fontSize: '14px', color: '#6b7280' }}>
+                        <p style={{ margin: '8px 0' }}><span style={{ fontWeight: '500' }}>Departamento:</span> {employee.department || 'No asignado'}</p>
+                        <p style={{ margin: '8px 0' }}><span style={{ fontWeight: '500' }}>Antigüedad:</span> {calculateSeniority(employee.startDate, employee.endDate)}</p>
+                        <p style={{ margin: '8px 0' }}><span style={{ fontWeight: '500' }}>Días restantes 2025:</span> {remainingDays}</p>
                       </div>
 
-                      <div className="mt-3">
-                        <div className="flex justify-between text-xs text-gray-600 mb-1">
+                      <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#6b7280', marginBottom: '4px' }}>
                           <span>Progreso 2025</span>
                           <span>{Math.round(usagePercentage)}%</span>
                         </div>
-                        <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div style={styles.progressBar}>
                           <div
-                            className="bg-blue-600 h-2 rounded-full transition-all duration-300"
-                            style={{ width: `${Math.min(usagePercentage, 100)}%` }}
+                            style={{
+                              ...styles.progressFill,
+                              width: `${Math.min(usagePercentage, 100)}%`
+                            }}
                           ></div>
                         </div>
                       </div>
 
-                      <div className="flex space-x-2 mt-4">
+                      <div style={{ display: 'flex', gap: '8px', marginTop: '16px' }}>
                         <button
                           onClick={() => editEmployee(employee)}
-                          className="flex-1 px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded hover:bg-gray-200"
+                          style={{
+                            flex: 1,
+                            ...styles.button,
+                            ...styles.buttonSecondary,
+                            fontSize: '12px',
+                            padding: '8px 12px'
+                          }}
+                          className="button-hover"
                         >
                           Editar
                         </button>
                         <button
                           onClick={() => deleteEmployee(employee.id)}
-                          className="flex-1 px-3 py-1 text-sm bg-red-100 text-red-700 rounded hover:bg-red-200"
+                          style={{
+                            flex: 1,
+                            ...styles.button,
+                            backgroundColor: '#fee2e2',
+                            color: '#991b1b',
+                            fontSize: '12px',
+                            padding: '8px 12px'
+                          }}
+                          className="button-hover"
                         >
                           Eliminar
                         </button>
@@ -958,18 +1271,18 @@ const VacationManager = () => {
         )}
 
         {activeTab === 'vacations' && (
-          <div className="space-y-6">
-            <div className="bg-white rounded-lg shadow p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+          <div style={styles.grid}>
+            <div style={styles.card}>
+              <h3 style={styles.cardTitle}>
                 {vacationForm.id ? 'Editar Vacaciones' : 'Solicitar Vacaciones'}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Empleado</label>
+              <div style={{...styles.grid, ...styles.gridCols2}}>
+                <div style={styles.formGroup}>
+                  <label style={styles.label}>Empleado</label>
                   <select
                     value={vacationForm.employeeId}
                     onChange={(e) => setVacationForm(prev => ({ ...prev, employeeId: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={styles.select}
                   >
                     <option value="">Seleccionar empleado</option>
                     {employees.filter(emp => isEmployeeActive(emp)).map(employee => (
@@ -977,56 +1290,58 @@ const VacationManager = () => {
                     ))}
                   </select>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Año</label>
+                <div style={styles.formGroup}>
+                  <label style={styles.label}>Año</label>
                   <select
                     value={vacationForm.year}
                     onChange={(e) => setVacationForm(prev => ({ ...prev, year: parseInt(e.target.value) }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={styles.select}
                   >
                     <option value={2025}>2025</option>
                     <option value={2026}>2026</option>
                   </select>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Fecha de inicio</label>
+                <div style={styles.formGroup}>
+                  <label style={styles.label}>Fecha de inicio</label>
                   <input
                     type="date"
                     value={vacationForm.startDate}
                     onChange={(e) => setVacationForm(prev => ({ ...prev, startDate: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={styles.input}
                   />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Fecha de fin</label>
+                <div style={styles.formGroup}>
+                  <label style={styles.label}>Fecha de fin</label>
                   <input
                     type="date"
                     value={vacationForm.endDate}
                     onChange={(e) => setVacationForm(prev => ({ ...prev, endDate: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={styles.input}
                   />
                 </div>
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Motivo (opcional)</label>
+                <div style={{...styles.formGroup, gridColumn: '1 / -1'}}>
+                  <label style={styles.label}>Motivo (opcional)</label>
                   <input
                     type="text"
                     value={vacationForm.reason}
                     onChange={(e) => setVacationForm(prev => ({ ...prev, reason: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={styles.input}
                     placeholder="Ej: Vacaciones familiares"
                   />
                 </div>
-                <div className="md:col-span-2 flex space-x-4">
+                <div style={{gridColumn: '1 / -1', display: 'flex', gap: '16px'}}>
                   <button
                     onClick={handleVacationSubmit}
-                    className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={{...styles.button, ...styles.buttonPrimary}}
+                    className="button-hover"
                   >
                     {vacationForm.id ? 'Actualizar' : 'Solicitar'} Vacaciones
                   </button>
                   {vacationForm.id && (
                     <button
                       onClick={() => setVacationForm({ id: null, employeeId: '', year: 2025, startDate: '', endDate: '', reason: '' })}
-                      className="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700"
+                      style={{...styles.button, ...styles.buttonSecondary}}
+                      className="button-hover"
                     >
                       Cancelar
                     </button>
@@ -1035,11 +1350,11 @@ const VacationManager = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Vacaciones Programadas</h3>
-              <div className="space-y-3">
+            <div style={styles.card}>
+              <h3 style={styles.cardTitle}>Vacaciones Programadas</h3>
+              <div>
                 {vacations.length === 0 ? (
-                  <p className="text-gray-500 text-center py-8">No hay vacaciones programadas</p>
+                  <p style={{ textAlign: 'center', color: '#6b7280', padding: '32px 0' }}>No hay vacaciones programadas</p>
                 ) : (
                   vacations
                     .filter(vacation => vacation.year >= 2025)
@@ -1051,24 +1366,41 @@ const VacationManager = () => {
                       const isPast = new Date(vacation.endDate) < new Date();
 
                       return (
-                        <div key={vacation.id} className={`border rounded-lg p-4 ${isPast ? 'bg-gray-50' : 'bg-white'}`}>
-                          <div className="flex justify-between items-start">
+                        <div key={vacation.id} style={{
+                          ...styles.vacationItem,
+                          backgroundColor: isPast ? '#f9fafb' : 'white'
+                        }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                             <div>
-                              <h4 className="font-medium text-gray-900">{employee?.name || 'Empleado eliminado'}</h4>
-                              <p className="text-sm text-gray-600">{startDate} - {endDate} ({vacation.year})</p>
-                              <p className="text-sm text-blue-600 font-medium">{vacation.days} días laborables</p>
-                              {vacation.reason && <p className="text-sm text-gray-500 mt-1">{vacation.reason}</p>}
+                              <h4 style={{ fontWeight: '500', color: '#111827', margin: '0 0 8px 0' }}>{employee?.name || 'Empleado eliminado'}</h4>
+                              <p style={{ fontSize: '14px', color: '#6b7280', margin: '4px 0' }}>{startDate} - {endDate} ({vacation.year})</p>
+                              <p style={{ fontSize: '14px', color: '#3b82f6', fontWeight: '500', margin: '4px 0' }}>{vacation.days} días laborables</p>
+                              {vacation.reason && <p style={{ fontSize: '14px', color: '#6b7280', margin: '4px 0' }}>{vacation.reason}</p>}
                             </div>
-                            <div className="flex space-x-2">
+                            <div style={{ display: 'flex', gap: '8px' }}>
                               <button
                                 onClick={() => setVacationForm(vacation)}
-                                className="px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded hover:bg-blue-200"
+                                style={{
+                                  ...styles.button,
+                                  backgroundColor: '#dbeafe',
+                                  color: '#1d4ed8',
+                                  fontSize: '12px',
+                                  padding: '6px 12px'
+                                }}
+                                className="button-hover"
                               >
                                 Editar
                               </button>
                               <button
                                 onClick={() => deleteVacation(vacation.id)}
-                                className="px-3 py-1 text-sm bg-red-100 text-red-700 rounded hover:bg-red-200"
+                                style={{
+                                  ...styles.button,
+                                  backgroundColor: '#fee2e2',
+                                  color: '#991b1b',
+                                  fontSize: '12px',
+                                  padding: '6px 12px'
+                                }}
+                                className="button-hover"
                               >
                                 Eliminar
                               </button>
@@ -1084,21 +1416,21 @@ const VacationManager = () => {
         )}
 
         {activeTab === 'restrictions' && (
-          <div className="space-y-6">
-            <div className="bg-white rounded-lg shadow p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+          <div style={styles.grid}>
+            <div style={styles.card}>
+              <h3 style={styles.cardTitle}>
                 {restrictionForm.id ? 'Editar Restricción' : 'Agregar Restricción'}
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p style={{ color: '#6b7280', marginBottom: '16px' }}>
                 Las restricciones evitan que dos empleados estén de vacaciones al mismo tiempo.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Primer Empleado</label>
+              <div style={{...styles.grid, ...styles.gridCols2}}>
+                <div style={styles.formGroup}>
+                  <label style={styles.label}>Primer Empleado</label>
                   <select
                     value={restrictionForm.employee1Id}
                     onChange={(e) => setRestrictionForm(prev => ({ ...prev, employee1Id: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={styles.select}
                   >
                     <option value="">Seleccionar empleado</option>
                     {employees.filter(emp => isEmployeeActive(emp)).map(employee => (
@@ -1106,12 +1438,12 @@ const VacationManager = () => {
                     ))}
                   </select>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Segundo Empleado</label>
+                <div style={styles.formGroup}>
+                  <label style={styles.label}>Segundo Empleado</label>
                   <select
                     value={restrictionForm.employee2Id}
                     onChange={(e) => setRestrictionForm(prev => ({ ...prev, employee2Id: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={styles.select}
                   >
                     <option value="">Seleccionar empleado</option>
                     {employees.filter(emp => isEmployeeActive(emp) && emp.id !== parseInt(restrictionForm.employee1Id)).map(employee => (
@@ -1119,27 +1451,29 @@ const VacationManager = () => {
                     ))}
                   </select>
                 </div>
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Motivo de la restricción</label>
+                <div style={{...styles.formGroup, gridColumn: '1 / -1'}}>
+                  <label style={styles.label}>Motivo de la restricción</label>
                   <input
                     type="text"
                     value={restrictionForm.reason}
                     onChange={(e) => setRestrictionForm(prev => ({ ...prev, reason: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={styles.input}
                     placeholder="Ej: No pueden estar ambos ausentes al mismo tiempo por requerimientos del proyecto"
                   />
                 </div>
-                <div className="md:col-span-2 flex space-x-4">
+                <div style={{gridColumn: '1 / -1', display: 'flex', gap: '16px'}}>
                   <button
                     onClick={handleRestrictionSubmit}
-                    className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={{...styles.button, ...styles.buttonPrimary}}
+                    className="button-hover"
                   >
                     {restrictionForm.id ? 'Actualizar' : 'Agregar'} Restricción
                   </button>
                   {restrictionForm.id && (
                     <button
                       onClick={() => setRestrictionForm({ id: null, employee1Id: '', employee2Id: '', reason: '' })}
-                      className="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700"
+                      style={{...styles.button, ...styles.buttonSecondary}}
+                      className="button-hover"
                     >
                       Cancelar
                     </button>
@@ -1148,40 +1482,54 @@ const VacationManager = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Restricciones Activas</h3>
-              <div className="space-y-3">
+            <div style={styles.card}>
+              <h3 style={styles.cardTitle}>Restricciones Activas</h3>
+              <div>
                 {restrictions.length === 0 ? (
-                  <p className="text-gray-500 text-center py-8">No hay restricciones configuradas</p>
+                  <p style={{ textAlign: 'center', color: '#6b7280', padding: '32px 0' }}>No hay restricciones configuradas</p>
                 ) : (
                   restrictions.map(restriction => {
                     const emp1 = employees.find(emp => emp.id === restriction.employee1Id);
                     const emp2 = employees.find(emp => emp.id === restriction.employee2Id);
 
                     return (
-                      <div key={restriction.id} className="border rounded-lg p-4 bg-yellow-50 border-yellow-200">
-                        <div className="flex justify-between items-start">
+                      <div key={restriction.id} style={styles.restrictionItem}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                           <div>
-                            <h4 className="font-medium text-gray-900 flex items-center">
-                              <AlertTriangle className="mr-2 text-yellow-500" size={18} />
+                            <h4 style={{ fontWeight: '500', color: '#111827', margin: '0 0 8px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                              <AlertTriangle color="#f59e0b" size={18} />
                               {emp1?.name || 'Empleado eliminado'} ↔ {emp2?.name || 'Empleado eliminado'}
                             </h4>
-                            <p className="text-sm text-gray-600 mt-1">{restriction.reason}</p>
-                            <div className="flex space-x-4 mt-2 text-xs text-gray-500">
+                            <p style={{ fontSize: '14px', color: '#6b7280', margin: '4px 0' }}>{restriction.reason}</p>
+                            <div style={{ display: 'flex', gap: '16px', marginTop: '8px', fontSize: '12px', color: '#6b7280' }}>
                               <span><strong>Departamento 1:</strong> {emp1?.department || 'N/A'}</span>
                               <span><strong>Departamento 2:</strong> {emp2?.department || 'N/A'}</span>
                             </div>
                           </div>
-                          <div className="flex space-x-2">
+                          <div style={{ display: 'flex', gap: '8px' }}>
                             <button
                               onClick={() => editRestriction(restriction)}
-                              className="px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded hover:bg-blue-200"
+                              style={{
+                                ...styles.button,
+                                backgroundColor: '#dbeafe',
+                                color: '#1d4ed8',
+                                fontSize: '12px',
+                                padding: '6px 12px'
+                              }}
+                              className="button-hover"
                             >
                               Editar
                             </button>
                             <button
                               onClick={() => deleteRestriction(restriction.id)}
-                              className="px-3 py-1 text-sm bg-red-100 text-red-700 rounded hover:bg-red-200"
+                              style={{
+                                ...styles.button,
+                                backgroundColor: '#fee2e2',
+                                color: '#991b1b',
+                                fontSize: '12px',
+                                padding: '6px 12px'
+                              }}
+                              className="button-hover"
                             >
                               Eliminar
                             </button>
