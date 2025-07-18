@@ -419,7 +419,7 @@ const VacationManager = () => {
           loadFromDB('restrictions')
         ]);
 
-        if (employeesData.length === 0) {
+        if (employeesData.length <= 5) {  // Fuerza recarga si hay 5 o menos
           const initialEmployees = [
 "PEPE SALGADO",
 "AURELIO CARDONA",
