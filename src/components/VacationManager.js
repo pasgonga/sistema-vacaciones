@@ -4,7 +4,7 @@ import {
   TrendingUp, Bell, BellOff, FileSpreadsheet, Upload, Download,
   Save, Search, Filter, Plus, Edit, Trash2, Eye, ThumbsUp, ThumbsDown,
   Settings, Moon, Sun, RefreshCw, Archive, UserPlus, CalendarDays,
-  PieChart, Activity, MapPin, Mail, Phone, Building
+  Activity, MapPin, Mail, Phone, Building
 } from 'lucide-react';
 import { 
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, 
