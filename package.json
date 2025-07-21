@@ -1,8 +1,8 @@
 {
-  "name": "gestion-vacaciones",
+  "name": "sistema-vacaciones",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pasgonga.github.io/gestion-vacaciones",
+  "homepage": "https://pasgonga.github.io/sistema-vacaciones",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
