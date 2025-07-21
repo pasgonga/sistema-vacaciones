@@ -68,3 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Estructura de tablas:
+- employees (datos completos + índices)
+- vacations (con estados y aprobaciones)
+- restrictions (con prioridades)
+- holidays (días festivos personalizables)
+- settings (configuraciones del sistema)
+- audit_log (historial de cambios)
+
+### Funciones Avanzadas:
+
+Exportar datos completos a JSON
+Importar configuraciones desde archivo
+Sistema de notificaciones mejorado
+Validaciones robustas en todos los formularios
+Manejo de conflictos inteligente
