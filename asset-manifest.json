@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gestion-vacaciones/static/css/main.f855e6bc.css",
+    "main.js": "/gestion-vacaciones/static/js/main.1f9dcc46.js",
+    "static/js/453.9a26350d.chunk.js": "/gestion-vacaciones/static/js/453.9a26350d.chunk.js",
+    "index.html": "/gestion-vacaciones/index.html",
+    "main.f855e6bc.css.map": "/gestion-vacaciones/static/css/main.f855e6bc.css.map",
+    "main.1f9dcc46.js.map": "/gestion-vacaciones/static/js/main.1f9dcc46.js.map",
+    "453.9a26350d.chunk.js.map": "/gestion-vacaciones/static/js/453.9a26350d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.1f9dcc46.js"
+  ]
+}
